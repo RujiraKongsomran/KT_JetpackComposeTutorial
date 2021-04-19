@@ -3,6 +3,7 @@ package com.rujirakongsomran.kt_jetpackcomposetutorial
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
@@ -13,18 +14,34 @@ class MainActivity : AppCompatActivity() {
         //setContentView(R.layout.activity_main)
 
         setContent {
-            Greeting("Android")
+            //Greeting("Android")
+            NewsStory()
         }
     }
 
+//    @Composable
+//    fun Greeting(name: String) {
+//        Text(text = "Hello $name")
+//    }
+//
+//    @Preview
+//    @Composable
+//    fun PreviewGreeting() {
+//        Greeting("Android")
+//    }
+
     @Composable
-    fun Greeting(name: String) {
-        Text(text = "Hello $name")
+    fun NewsStory() {
+        Column {
+            Text("A day in Shark Fin Cove")
+            Text("Davenport, California")
+            Text("December 2018")
+        }
     }
 
     @Preview
     @Composable
-    fun PreviewGreeting() {
-        Greeting("Android")
+    fun DefaultPreview() {
+        NewsStory()
     }
 }
