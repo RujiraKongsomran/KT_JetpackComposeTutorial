@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
@@ -57,8 +58,12 @@ class MainActivity : AppCompatActivity() {
 
                 Spacer(Modifier.height(16.dp))
                 Text(
-                    "A day in Shark Fin Cove",
-                    style = typography.h6
+                    "A day wandering through the sandhills " +
+                            "in Shark Fin Cove, and a few of the " +
+                            "sights I saw",
+                    style = typography.h6,
+                    maxLines = 2,
+                    overflow = TextOverflow.Ellipsis
                 )
                 Text(
                     "Davenport, California",
