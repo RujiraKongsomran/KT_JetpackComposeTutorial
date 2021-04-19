@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,5 +20,11 @@ class MainActivity : AppCompatActivity() {
     @Composable
     fun Greeting(name: String) {
         Text(text = "Hello $name")
+    }
+
+    @Preview
+    @Composable
+    fun PreviewGreeting() {
+        Greeting("Android")
     }
 }
