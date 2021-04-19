@@ -5,10 +5,12 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
@@ -24,7 +26,8 @@ class MainActivity : AppCompatActivity() {
 
         setContent {
             //Greeting("Android")
-            NewsStory()
+            //NewsStory()
+            ArtistCard()
         }
     }
 
@@ -81,5 +84,36 @@ class MainActivity : AppCompatActivity() {
     @Composable
     fun DefaultPreview() {
         NewsStory()
+    }
+
+    @Composable
+    fun ArtistCard() {
+        MaterialTheme() {
+            val typography = MaterialTheme.typography
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.padding(16.dp)
+            ) {
+                Image(
+                    painter = painterResource(R.drawable.header),
+                    contentDescription = null,
+                    contentScale = ContentScale.Crop,            // crop the image if it's not a square
+                    modifier = Modifier
+                        .size(64.dp)
+                        .clip(CircleShape)                       // clip to the circle shape
+                )
+                Spacer(Modifier.width(16.dp))
+                Column {
+                    Text(
+                        "avenport, California",
+                        style = typography.h6
+                    )
+                    Text(
+                        "3 minutes ago",
+                        style = typography.body1
+                    )
+                }
+            }
+        }
     }
 }
