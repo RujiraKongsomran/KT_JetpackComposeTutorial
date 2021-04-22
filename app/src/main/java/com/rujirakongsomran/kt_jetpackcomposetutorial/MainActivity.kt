@@ -30,7 +30,8 @@ class MainActivity : AppCompatActivity() {
             //NewsStory()
             //ArtistCard()
             //AlignInRow()
-            PaddedComposable()
+            //PaddedComposable()
+            SizedComposable()
         }
     }
 
@@ -150,8 +151,18 @@ class MainActivity : AppCompatActivity() {
 
     @Composable
     fun PaddedComposable() {
-        Text("Hello", modifier = Modifier
-            .background(Color.Green)
-            .padding(20.dp))
+        Text(
+            "Hello", modifier = Modifier
+                .background(Color.Green)
+                .padding(20.dp)
+        )
+    }
+
+    @Composable
+    fun SizedComposable() {
+        Box(
+            Modifier
+                .size(100.dp, 100.dp)
+                .background(Color.Red))
     }
 }
