@@ -33,7 +33,8 @@ class MainActivity : AppCompatActivity() {
             //PaddedComposable()
             //SizedComposable()
             //FixedSizeComposable
-            FillSizeComposable()
+            //FillSizeComposable
+            MatchParentSizeComposable()
         }
     }
 
@@ -195,9 +196,20 @@ class MainActivity : AppCompatActivity() {
             Box(
                 Modifier
                     .background(Color.Blue)
-                    .fillMaxSize())
+                    .fillMaxSize()
+            )
         }
     }
 
-
+    @Composable
+    fun MatchParentSizeComposable() {
+        Box {
+            Spacer(
+                Modifier
+                    .matchParentSize()
+                    .background(Color.Green)
+            )
+            Text("Hello World")
+        }
+    }
 }
