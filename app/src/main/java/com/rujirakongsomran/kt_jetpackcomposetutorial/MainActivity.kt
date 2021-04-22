@@ -35,7 +35,9 @@ class MainActivity : AppCompatActivity() {
             //FixedSizeComposable
             //FillSizeComposable
             //MatchParentSizeComposable()
-            TextWithPaddingFromBaseLine()
+            //TextWithPaddingFromBaseLine()\
+            //OffsetComposable()
+            FlexibleComposable()
         }
     }
 
@@ -218,6 +220,38 @@ class MainActivity : AppCompatActivity() {
     fun TextWithPaddingFromBaseLine() {
         Box(Modifier.background(Color.Yellow)) {
             Text("Hi there!", Modifier.paddingFromBaseline(top = 32.dp))
+        }
+    }
+
+    @Composable
+    fun OffsetComposable() {
+        Box(
+            Modifier
+                .background(Color.Yellow)
+                .size(width = 150.dp, height = 70.dp)
+        ) {
+            Text(
+                "Layout offset modifier sample",
+                Modifier.offset(x = 15.dp, y = 20.dp)
+            )
+        }
+    }
+
+    @Composable
+    fun FlexibleComposable() {
+        Row(Modifier.width(210.dp)) {
+            Box(
+                Modifier
+                    .weight(2f)
+                    .height(50.dp)
+                    .background(Color.Blue)
+            )
+            Box(
+                Modifier
+                    .weight(1f)
+                    .height(50.dp)
+                    .background(Color.Red)
+            )
         }
     }
 }
