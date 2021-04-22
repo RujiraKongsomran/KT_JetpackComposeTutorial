@@ -34,7 +34,8 @@ class MainActivity : AppCompatActivity() {
             //SizedComposable()
             //FixedSizeComposable
             //FillSizeComposable
-            MatchParentSizeComposable()
+            //MatchParentSizeComposable()
+            TextWithPaddingFromBaseLine()
         }
     }
 
@@ -210,6 +211,13 @@ class MainActivity : AppCompatActivity() {
                     .background(Color.Green)
             )
             Text("Hello World")
+        }
+    }
+
+    @Composable
+    fun TextWithPaddingFromBaseLine() {
+        Box(Modifier.background(Color.Yellow)) {
+            Text("Hi there!", Modifier.paddingFromBaseline(top = 32.dp))
         }
     }
 }
