@@ -31,7 +31,9 @@ class MainActivity : AppCompatActivity() {
             //ArtistCard()
             //AlignInRow()
             //PaddedComposable()
-            SizedComposable()
+            //SizedComposable()
+            //FixedSizeComposable
+            FillSizeComposable()
         }
     }
 
@@ -163,6 +165,39 @@ class MainActivity : AppCompatActivity() {
         Box(
             Modifier
                 .size(100.dp, 100.dp)
-                .background(Color.Red))
+                .background(Color.Red)
+        )
     }
+
+    @Composable
+    fun FixedSizeComposable() {
+        Box(
+            Modifier
+                .size(90.dp, 150.dp)
+                .background(Color.Green)
+        ) {
+            Box(
+                Modifier
+                    .requiredSize(100.dp, 100.dp)
+                    .background(Color.Red)
+            )
+        }
+    }
+
+    @Composable
+    fun FillSizeComposable() {
+        Box(
+            Modifier
+                .background(Color.Green)
+                .size(50.dp)
+                .padding(10.dp)
+        ) {
+            Box(
+                Modifier
+                    .background(Color.Blue)
+                    .fillMaxSize())
+        }
+    }
+
+
 }
