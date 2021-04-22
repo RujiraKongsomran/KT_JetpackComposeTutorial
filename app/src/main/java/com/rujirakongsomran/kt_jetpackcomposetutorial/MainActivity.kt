@@ -1,8 +1,8 @@
 package com.rujirakongsomran.kt_jetpackcomposetutorial
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -18,7 +18,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 class MainActivity : AppCompatActivity() {
@@ -30,7 +29,8 @@ class MainActivity : AppCompatActivity() {
             //Greeting("Android")
             //NewsStory()
             //ArtistCard()
-            AlignInRow()
+            //AlignInRow()
+            PaddedComposable()
         }
     }
 
@@ -138,11 +138,20 @@ class MainActivity : AppCompatActivity() {
             Box(
                 Modifier
                     .size(50.dp)
-                    .background(Color.Red))
+                    .background(Color.Red)
+            )
             Box(
                 Modifier
                     .size(50.dp)
-                    .background(Color.Blue))
+                    .background(Color.Blue)
+            )
         }
+    }
+
+    @Composable
+    fun PaddedComposable() {
+        Text("Hello", modifier = Modifier
+            .background(Color.Green)
+            .padding(20.dp))
     }
 }
